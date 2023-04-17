@@ -1,9 +1,14 @@
 @charset "UTF-8"
+
 *{
     font-family: 'Courier New', Courier, monospace;
 padding: 10px;
 margin: 10px;
 box-sizing: border-box;
+}
+
+#btnSubmit {
+    display: block;
 }
 
 body, html {

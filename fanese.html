@@ -10,6 +10,48 @@
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="media-query.css">
 
+    <style>
+        #btnSubmit {
+            display: block;
+        }
+    </style>
+
+    <script>
+        function handleSubmit(e) {          
+            e.preventDefault();  
+            let titulo = document.getElementById("ievento").value;
+            let data = document.getElementById("idata").value;
+            let p1 = document.getElementById("iperg1").value;
+            let p2 = document.getElementById("iperg2").value;
+            let p3 = document.getElementById("iperg3").value;
+
+            const payload = {
+                name: titulo,
+                data: data,
+                perguntas: [p1, p2, p3]
+            };
+
+            fetch('http://54.39.13.223:6010/Eventos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch request:', error);
+            });
+        }
+    </script>
       
 </head>
 <body>
@@ -20,9 +62,7 @@
             <div id="formulario">
                 <h1>Formulário</h1>
               <strong> <p>Seja bem-vindo(a). Preencha o formulário a seguir:</p> </strong>
-                <form action="login.php" method="post" autocomplete="on
-                ">
-
+              <form onsubmit="handleSubmit(event)" method="post" autocomplete="on">
                     <div class="campo">
                         <span class="material-symbols-outlined">
                             edit
@@ -30,15 +70,6 @@
                         <label for="ievento"></label>
                         <input type="text" name="evento" id="ievento" placeholder="Título do evento" autocomplete="evento">
                     </div>
-                   
-    
-
-                   <!-- <div class="campo">
-                       <span class="material-icons">vpn_key</span> 
-                        <label for="email"></label>
-                        <input type="email" name="email" id="iemail" placeholder="seu email" autocomplete="mail">
-                    </div>-->
-
                     
 
                     <div class="campo">
@@ -49,27 +80,12 @@
                         <input type="date" name="data" id="idata" placeholder="data do evento" autocomplete="data">
                     </div>
 
-                
-
-                  <!--  <div class="campo">
-                        <label for="itel"></label>
-                        <input type="tel" name="telefone" id="itel" placeholder="telefone" autocomplete="off">
-                    </div>
-
-                    <br>
-
-                    <div class="campo">
-                        <label for="icnpj"></label>
-                        <input type="number" name="cnpj" id="icnpj" placeholder="cnpj" autocomplete="cc-number">
-                    </div>
-                    <br>-->
-
                     <div class="campo">
                         <span class="material-symbols-outlined">
                             text_fields
                             </span>
                         <label for="iperg"></label>
-                        <input type="text" name="pergunta" id="iperg" placeholder="Pergunta 1" autocomplete="off">
+                        <input type="text" name="pergunta" id="iperg1" placeholder="Pergunta 1" autocomplete="off">
                     </div>
                     
 
@@ -78,7 +94,7 @@
                             text_fields
                             </span>
                         <label for="iperg"></label>
-                        <input type="text" name="pergunta" id="iperg" placeholder="Pergunta 1" autocomplete="off">
+                        <input type="text" name="pergunta" id="iperg2" placeholder="Pergunta 1" autocomplete="off">
                     </div>
                     
 
@@ -87,10 +103,10 @@
                             text_fields
                             </span>
                         <label for="iperg"></label>
-                        <input type="text" name="pergunta" id="iperg" placeholder="Pergunta 1" autocomplete="off">
+                        <input type="text" name="pergunta" id="iperg3" placeholder="Pergunta 1" autocomplete="off">
                     </div>
                     
-                    <input type="submit" value="Cadastrar">
+                    <button type="submit">Teste</button>
                     <a href="cadastrar.html" class="botao"></a>
                     </i>
                 </form>
