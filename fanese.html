@@ -7,14 +7,104 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Poppins:ital,wght@1,600&family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="media-query.css">
 
 
-    <style>
+   <style>
         #btnSubmit {
             display: block;
         }
+
+        body{
+        
+            font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    background-image:linear-gradient(to left, #247025e1, rgb(117, 168, 124));   
+
+    color: white;
+        }
+        
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+background-color: rgba(253, 243, 243, 0.226);
+            padding: 17px;
+            box-shadow: 3px 3px 8px 8px rgba(0, 0, 0, 0.329);
+            border-radius: 18px ;
+            width: 85%;
+            height: 56%; /*ATENÇÃO*/
+            text-align: left;
+        }
+
+        fieldset{
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        legend{
+            text-align: center; 
+        }
+
+        .inputBox{
+            position: relative;
+        }
+
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 2px solid rgba(248, 242, 242, 0.541);
+            outline:none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+
+         .labelInput{
+         
+            position: static;
+            top: 0px;
+            left:0px;
+            pointer-events: none;
+            transition: .5s;
+         }
+
+         .inputUser:focus ~ .labelInput,
+         .inputUser:valid ~ .labelInput{
+            top: -20px;
+            font-size: 14px;
+            
+         }
+
+
+         #Data_do_evento{
+            border: none;
+            padding: 7px;
+            border-radius: 10px;
+            outline: none;
+         }
+
+         #cadastrar{
+            background-color: white;
+            width: 100%;
+            border: 40px;
+            padding: 15px;
+            color: #247025;
+            font-family:'Oswald', sans-serif ;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+         }
+
+         #cadastrar:hover{
+            background-color:#247025 ;
+            color: white;
+         }
     </style>
 
     <script>
@@ -44,7 +134,7 @@
     }
 
     // Verifica se pelo menos uma das perguntas foi preenchida
-    if (!p1 && !p2 && !p3) {
+    if (!perg1 && !perg2 && !perg3) {
         alert('Por favor, preencha pelo menos uma pergunta');
         return;
     }
@@ -76,63 +166,49 @@
             }); */
         }
     </script>
-      
+
 </head>
-<body>
+<body> 
     <main>
-        <section id="login">
-            <div id="imagem"> 
-            </div>
-            <div id="formulario">
-                <h1>Formulário</h1>
-              <strong> <p>Seja bem-vindo(a). Preencha o formulário a seguir:</p> </strong>
-              <form onsubmit="handleSubmit(event)" method="post" autocomplete="on">
-                    <div class="campo">
-                        <span class="material-symbols-outlined">
-                            edit
-                            </span>
-                        <label for="ievento"></label>
-                        <input type="text" name="evento" id="ievento" placeholder="Título do evento" autocomplete="evento">
-                    </div>
-                    
+       
+        
+    
+    
+    
+        <div class="box">
 
-                    <div class="campo">
-                        <span class="material-symbols-outlined">
-                            calendar_month
-                            </span>
-                        <label for="idata"></label>
-                        <input type="date" id="idata" placeholder="data do evento" autocomplete="data">
-                    </div>
+        <form action="" method="post">
+        <fieldset>
+            <legend> <b>Cadastro de eventos da Fanese</b></legend>
+            <br>
+            <div class="inputbox">
+            <input type="text" name="Título" id="Título" class="inputUser" required> 
+            <label for="Título" class="labelInput">Título do evento</label> </div>
 
-                    <div class="campo">
-                        <span class="material-symbols-outlined">
-                            text_fields
-                            </span>
-                        <label for="iperg"></label>
-                        <input type="text"  id="iperg1" placeholder="Pergunta 1" autocomplete="off">
-                    </div>
-                    
+            
+<br>
+            <div class="inputbox"> 
+            <input type="date" name="data" id="Data_do_evento"  required> 
+            <label for="data" >Data do evento</label> </div>
+            
+<br>
+            <div class="inputbox">
+            <input type="text" name="Perg1" id="Perg1" class="inputUser" required> 
+            <label for="1º Pergunta" class="labelInput"> Pergunta 1</label> </div>        
+<br>
+            <div class="inputbox">
+            <input type="text" name="Perg2" id="Perg2" class="inputUser" > 
+            <label for="2º Pergunta" class="labelInput"> Pergunta 2</label> </div>  
+<br>
+            <div class="inputbox">
+            <input type="text" name="Perg3" id="Perg3" class="inputUser" > 
+            <label for="3º Pergunta" class="labelInput"> Pergunta 3</label> </div>  
+<br>
+ <br>               
 
-                    <div class="campo">
-                        <span class="material-symbols-outlined">
-                            text_fields
-                            </span>
-                        <label for="iperg"></label>
-                        <input type="text" id="iperg2" placeholder="Pergunta 1" autocomplete="off">
-                    </div>
-                    
 
-                    <div class="campo">
-                        <span class="material-symbols-outlined">
-                            text_fields
-                            </span>
-                        <label for="iperg"></label>
-                        <input type="text"  id="iperg3" placeholder="Pergunta 1" autocomplete="off">
-                    </div>
-                    
-
-                    <a href="cadastrar.html" class="botao"></a>
-                    <input type="submit" value="cadastrar" id="cadastrar">
+                <a href="cadastrar.html" class="botao"></a>
+                    <input type="submit" value="Cadastrar" id="cadastrar">
                     </i>
                 </form>
                 <script>
@@ -149,8 +225,10 @@
 
                     }
                 </script>
-            </div>
-        </section>
-    </main>
+        </fieldset>
+    </form>
+   
+    
+</main>
 </body>
 </html>

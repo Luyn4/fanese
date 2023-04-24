@@ -1,10 +1,11 @@
-@charset "UTF-8"
+/*@charset "UTF-8"
 
 *{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 padding: 10px;
 margin: 10px;
 box-sizing: border-box;
+background-image:#247025 ;
 }
 
 #btnSubmit {
@@ -12,10 +13,11 @@ box-sizing: border-box;
 }
 
 body, html {
-    background-color:rgb(12, 104, 35) ;
+    background:  #247025 url(../fanese_l.jpeg) no-repeat ;
     height: 100vh;
     width: 100vw;
     font-size: 1.2em;
+    color: rgb(187, 19, 19);
 }
 
 main{
@@ -30,12 +32,14 @@ top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
 overflow: hidden;
+color: white;
 
-    background-color: white;
-    width: 360px;
-    height: 715px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.336);
+
+    background-color: #247025;
+    width: 660px;
+    height: 415px;
+    border-radius: 10px;
+    box-shadow:  10px 10px 10px  rgba(0, 0, 0, 0.404);
 
     transition: width .3s, height .3s;
     transition-timing-function: ease;
@@ -43,9 +47,9 @@ overflow: hidden;
 
 section#login > div#imagem {
     display: block;
-    background:#449F46 url(../fanese_.jpg);
+    background:#247025 
     background-size: cover;
-    background-position: left bottom;
+    background-position: right;
     height: 200px;
 }
 
@@ -57,22 +61,19 @@ section#login > div#formulario {
 div#formulario > h1 {
     font-size: 30px;
     text-align: center;
-    margin-bottom: 10px;
-}
-
-div#formulario > p{
-    font-size: 0.8em;
+    font-family:  'Open Sans';
 
 }
+
 
 form > div.campo {
-    background-color: #abdfacd7;
-    border: 2px solid rgba(0, 0, 0, 0.192);
+    background-color: #247025;
+    border: 1.8px solid rgba(59, 59, 59, 0.473);
     display: block;
     width: 100%;
-    height: 40px;
+    height: 50px;
     border-radius: 10px;
-    margin: 5px 0px;
+    margin: 8px 0px;
     
 }
 
@@ -82,17 +83,18 @@ div.campo > label {
 
 div.campo > i {
     color: white;
-    background-color: #abdfac8e;
+    background-color: #247025;
     font-size: 2em;
     width: 40px;
     padding: 5px;
 }
 div.campo > input{
-    background-color: #abdfac91;
-    font-size: .8em;
-  
-    height: 68%;
-    transform:translatey(-1px) ;
+    background-color: #247025;
+    font-size: 1.em;
+  width: 92%;
+    height: 64%;
+    margin: auto;
+     
     border: 0px;
     border-radius: 5px;
     padding: 4px;
@@ -100,8 +102,7 @@ div.campo > input{
 }
 
 div.campo > input:focus-within{
-    background-color: white;
-    border: none;
+
 }
 
 form > input[type=submit] {
@@ -109,14 +110,18 @@ form > input[type=submit] {
     font-size: 1em;
     width: 70%;
     height: 40px;
-    background-color:#308132 ;
-    color: white;
+    background-color:white ;
+    color: #247025;
     border: block;
     border-radius: 5px;
     cursor: pointer;
+    
 }
 
 form > input[type=submit]:hover{
-    background-color: #083509;
+    background-color: #247025;
+    color: white;
+    
 }
+
 
